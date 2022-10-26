@@ -36,11 +36,11 @@ print(df_gistemp.head(10))
 
 #plotting temperature
 
-df_gistemp.plot('Date','Mean')
+df_gistemp.plot('Date','Mean', title = 'monthly mean temperature anomaly (C)')
 
 #plotting co2
 
-monthly_co2_df.plot('decimal_date','average')
+monthly_co2_df.plot('decimal_date','average', title = 'monthly mean co2 concentration (ppm)')
 
 #%%
 
@@ -50,7 +50,7 @@ monthly_co2_df.plot('decimal_date','average')
 dec_mean_temp = df_gistemp.resample('10A', on = 'Date').mean()
 
 
-dec_mean_temp.plot()
+dec_mean_temp.plot(title = 'decadal mean temperature anomaly')
 
 
 
@@ -69,10 +69,11 @@ monthly_co2_df['Date'] = co2_datetime
 
 dec_mean_co2 = monthly_co2_df.resample('10A', on = 'Date').mean()
 
-dec_mean_co2.plot('decimal_date','average', marker = 'x')
+dec_mean_co2.plot('decimal_date','average', marker = 'x', title = 'decadal mean co2 concentration')
+plt.show()
+
 
 #%%
-
 
 #annual growth rates since the 60s of co2
 
@@ -96,6 +97,7 @@ plt.title('growth rate against end of decade for co2')
 plt.xlabel('Decades')
 plt.ylabel('growth rate of co2 ppm/yrs')
 plt.plot(decades_co2, growth_rates_co2, marker = 'x')
+plt.show()
 
 #%%
 
@@ -125,9 +127,10 @@ plt.title('decadal growth rate in temperature anomaly in degrees/year')
 plt.ylabel('temperature anomaly annual growth rate')
 plt.xlabel('end of decade')
 plt.plot(decades_temp, growth_rates_temp, marker = 'x')
+plt.show()
 
 
-
+#%%
 
 
 
