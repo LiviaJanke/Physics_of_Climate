@@ -34,24 +34,32 @@ print(df_gistemp.head(10))
 
 #%%
 
+#plotting temperature
+
 df_gistemp.plot('Date','Mean')
 
-#%%
-
-print(monthly_co2_df.head(10))
+#plotting co2
 
 monthly_co2_df.plot('decimal_date','average')
 
 #%%
 
 
+#Determining decadal mean temperature
+
+dec_mean_temp = df_gistemp.resample('10A', on = 'Date').mean()
 
 
+dec_mean_temp.plot()
 
 
+#%%
 
+print(monthly_co2_df.head())
 
+#%%
 
+monthly_co2_df['TimeStamp'] = pd.to_datetime(monthly_co2_df['decimal_date'], unit='y')
 
 
 
