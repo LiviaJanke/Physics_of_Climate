@@ -74,16 +74,33 @@ dec_mean_co2.plot('decimal_date','average', marker = 'x')
 #%%
 
 
+print(dec_mean_co2['average'])
+print(dec_mean_temp)
+
+#%%
+
+#annual growth rates since the 60s of co2
+
+#1958 - 1968
+co2_gr1 = (dec_mean_co2['average'][1] - dec_mean_co2['average'][0])/10
+co2_gr2 = (dec_mean_co2['average'][2] - dec_mean_co2['average'][1])/10
+co2_gr3 = (dec_mean_co2['average'][3] - dec_mean_co2['average'][2])/10
+co2_gr4 = (dec_mean_co2['average'][4] - dec_mean_co2['average'][3])/10
+co2_gr5 = (dec_mean_co2['average'][5] - dec_mean_co2['average'][4])/10
+co2_gr6 = (dec_mean_co2['average'][6] - dec_mean_co2['average'][5])/10
+co2_gr7 = (dec_mean_co2['average'][7] - dec_mean_co2['average'][6])/10
+
+#%%
+
+growth_rates = np.array([co2_gr1, co2_gr2, co2_gr3, co2_gr4, co2_gr5, co2_gr6, co2_gr7])
+
+decades = np.array([1960, 1970, 1980 , 1990, 2000, 2010, 2022])
 
 
-
-
-
-
-
-
-
-
+plt.title('growth rate against decade for co2')
+plt.xlabel('Decades')
+plt.ylabel('growth rate ppm/yrs')
+plt.plot(decades, growth_rates, marker = 'x')
 
 
 
