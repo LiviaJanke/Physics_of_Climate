@@ -63,6 +63,9 @@ monthly_co2_df['Date'] = co2_datetime
 
 #%%
 
+#plotting decadal mean co2
+#off by about 5 months - doesn't really matter
+
 
 dec_mean_co2 = monthly_co2_df.resample('10A', on = 'Date').mean()
 
