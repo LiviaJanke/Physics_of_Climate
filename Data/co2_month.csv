@@ -50,7 +50,7 @@
 # and uncertainty. We have no information for SIO data about Ndays, stdv, unc
 # so that they are also indicated by negative numbers
 #
-year,month,decimal date,average,deseasonalized,ndays,sdev,unc
+year,month,decimal_date,average,deseasonalized,ndays,sdev,unc
 1958,3,1958.2027,315.70,314.43,-1,-9.99,-0.99
 1958,4,1958.2877,317.45,315.16,-1,-9.99,-0.99
 1958,5,1958.3699,317.51,314.71,-1,-9.99,-0.99
