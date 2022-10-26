@@ -53,13 +53,32 @@ dec_mean_temp = df_gistemp.resample('10A', on = 'Date').mean()
 dec_mean_temp.plot()
 
 
-#%%
-
-print(monthly_co2_df.head())
 
 #%%
 
-monthly_co2_df['TimeStamp'] = pd.to_datetime(monthly_co2_df['decimal_date'], unit='y')
+co2_datetime = pd.date_range(start='1/03/1958', periods = 775,freq = 'M')
+
+monthly_co2_df['Date'] = co2_datetime
+
+
+#%%
+
+
+dec_mean_co2 = monthly_co2_df.resample('10A', on = 'Date').mean()
+
+dec_mean_co2.plot('decimal_date','average', marker = 'x')
+
+#%%
+
+
+
+
+
+
+
+
+
+
 
 
 
