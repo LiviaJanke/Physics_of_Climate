@@ -74,11 +74,6 @@ dec_mean_co2.plot('decimal_date','average', marker = 'x')
 #%%
 
 
-print(dec_mean_co2['average'])
-print(dec_mean_temp)
-
-#%%
-
 #annual growth rates since the 60s of co2
 
 #1958 - 1968
@@ -90,17 +85,56 @@ co2_gr5 = (dec_mean_co2['average'][5] - dec_mean_co2['average'][4])/10
 co2_gr6 = (dec_mean_co2['average'][6] - dec_mean_co2['average'][5])/10
 co2_gr7 = (dec_mean_co2['average'][7] - dec_mean_co2['average'][6])/10
 
+#co2 growth rates
+
+growth_rates_co2 = np.array([co2_gr1, co2_gr2, co2_gr3, co2_gr4, co2_gr5, co2_gr6, co2_gr7])
+
+decades_co2 = np.array([1968, 1978 , 1988, 1998, 2008, 2018,2028])
+
+
+plt.title('growth rate against end of decade for co2')
+plt.xlabel('Decades')
+plt.ylabel('growth rate of co2 ppm/yrs')
+plt.plot(decades_co2, growth_rates_co2, marker = 'x')
+
 #%%
 
-growth_rates = np.array([co2_gr1, co2_gr2, co2_gr3, co2_gr4, co2_gr5, co2_gr6, co2_gr7])
+#temperature growth rates
 
-decades = np.array([1960, 1970, 1980 , 1990, 2000, 2010, 2022])
+temp_gr1 = (dec_mean_temp['Mean'][1] - dec_mean_temp['Mean'][0])/10
+temp_gr2 = (dec_mean_temp['Mean'][2] - dec_mean_temp['Mean'][1])/10
+temp_gr3 = (dec_mean_temp['Mean'][3] - dec_mean_temp['Mean'][2])/10
+temp_gr4 = (dec_mean_temp['Mean'][4] - dec_mean_temp['Mean'][3])/10
+temp_gr5 = (dec_mean_temp['Mean'][5] - dec_mean_temp['Mean'][4])/10
+temp_gr6 = (dec_mean_temp['Mean'][6] - dec_mean_temp['Mean'][5])/10
+temp_gr7 = (dec_mean_temp['Mean'][7] - dec_mean_temp['Mean'][6])/10
+temp_gr8 = (dec_mean_temp['Mean'][8] - dec_mean_temp['Mean'][7])/10
+temp_gr9 = (dec_mean_temp['Mean'][9] - dec_mean_temp['Mean'][8])/10
+temp_gr10 = (dec_mean_temp['Mean'][10] - dec_mean_temp['Mean'][9])/10
+temp_gr11 = (dec_mean_temp['Mean'][11] - dec_mean_temp['Mean'][10])/10
+temp_gr12 = (dec_mean_temp['Mean'][12] - dec_mean_temp['Mean'][11])/10
+temp_gr13 = (dec_mean_temp['Mean'][13] - dec_mean_temp['Mean'][12])/10
+temp_gr14 = (dec_mean_temp['Mean'][14] - dec_mean_temp['Mean'][13])/10
+
+growth_rates_temp = np.array([temp_gr1, temp_gr2, temp_gr3, temp_gr4, temp_gr5, temp_gr6, temp_gr7, temp_gr8, temp_gr9, temp_gr10, temp_gr11, temp_gr12, temp_gr13, temp_gr14])
 
 
-plt.title('growth rate against decade for co2')
-plt.xlabel('Decades')
-plt.ylabel('growth rate ppm/yrs')
-plt.plot(decades, growth_rates, marker = 'x')
+decades_temp = np.array([1890, 1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020])
+
+plt.title('decadal growth rate in temperature anomaly in degrees/year')
+plt.ylabel('temperature anomaly annual growth rate')
+plt.xlabel('end of decade')
+plt.plot(decades_temp, growth_rates_temp, marker = 'x')
+
+
+
+
+
+
+
+
+
+
 
 
 
